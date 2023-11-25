@@ -31,12 +31,10 @@ fn infix_to_prefix(args: Vec<String>) -> Vec<String> {
     let mut output: Vec<String> = vec![];
 
     args.into_iter().rev().for_each(|op| {
-        // println!("{:?} {:?} {:?}", &stack, &output, &op);
         if is_operand(&op) {
             output.push(op);
         } else {
             while stack.len() != 0 && !is_current_higher_prio(&op, stack.last().unwrap()) {
-                // println!("{:?} {:?}", &stack, &output);
                 output.push(stack.pop().unwrap());
             }
             stack.push(op);
@@ -65,7 +63,6 @@ fn calculate_result(prefix_notation: Vec<String>) -> i32 {
 
 fn main() {
     let cmd_line_args = std::env::args().skip(1).collect::<Vec<String>>();
-    println!("{:?}", cmd_line_args);
     println!("{:?}", calculate_result(infix_to_prefix(cmd_line_args)));
 }
 
@@ -77,8 +74,9 @@ mod tests {
     fn basic_arithmetic() {
         // 3 + 4 * 5 / 6
         // + 3 / * 4 5 6
-        let inp: Vec<String> = "3 + 4 * 5 / 6".split(" ").collect();
-        let rv = calculate_result(inp);
+        let inp = "3 + 4 * 5 / 6".split_whitespace().map(|s| s.to_string()).collect::<Vec<String>>();
+        let prefix = infix_to_prefix(inp);
+        let rv = calculate_result(prefix);
         assert_eq!(rv, 6);
     }
 }

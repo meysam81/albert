@@ -1,0 +1,25 @@
+quiet: false
+
+debug: false
+
+insecure: false
+
+timeout: 1m
+
+cache:
+  dir: .pre-commit-trivy-cache
+
+scan:
+  skip-dirs:
+    - target
+
+severity:
+  - MEDIUM
+  - HIGH
+  - CRITICAL
+
+vulnerability:
+  type:
+    - os
+    - library
+  ignore-unfixed: false

@@ -124,3 +124,45 @@ jobs:
         stale-pr-message: 'This pull request is stale because it has been open for 30 days with no activity. Remove this label to keep it open.'
         stale-issue-label: 'stale-issue'
         stale-pr-label: 'stale-pr'
+
+  fmt:
+    if: github.ref_name == 'main' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      - name: Install Rust
+        run: |
+          rustup toolchain install nightly
+      - name: Run fmt
+        run: |
+          cargo +nightly fmt --all -- --check
+
+  clippy:
+    if: github.ref_name == 'main' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      - name: Install Rust
+        run: |
+          rustup toolchain install nightly
+      - name: Run clippy
+        run: |
+          cargo +nightly clippy --all --all-targets --all-features -- -D warnings

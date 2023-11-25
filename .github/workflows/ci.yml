@@ -186,7 +186,8 @@ jobs:
           exit-code: "1"
           scan-type: fs
           trivy-config: trivy.yaml
-      - name: Upload Trivy scan results to GitHub Security tab
+      - continue-on-error: true
+        name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'

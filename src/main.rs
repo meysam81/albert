@@ -34,7 +34,7 @@ fn infix_to_prefix(args: Vec<String>) -> Vec<String> {
         if is_operand(&op) {
             output.push(op);
         } else {
-            while stack.len() != 0 && !is_current_higher_prio(&op, stack.last().unwrap()) {
+            while !stack.is_empty() && !is_current_higher_prio(&op, stack.last().unwrap()) {
                 output.push(stack.pop().unwrap());
             }
             stack.push(op);

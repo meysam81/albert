@@ -1,9 +1,33 @@
 [package]
 name = "albert"
-version = "0.1.7"
+version = "0.1.8"
 edition = "2021"
 description = "A terminal calculator written in Rust with ❤️"
 license = "Apache-2.0"
+
+authors = ["Meysam Azad <contact@meysam.io>"]
+repository = "https://github.com/meysam81/albert"
+keywords = [
+    "math",
+    "calculator",
+    "cli",
+    "terminal",
+    "arithmetic",
+]
+categories = [
+    "algorithms",
+    "command-line-utilities",
+    "mathematics",
+]
+include = [
+    "README.md",
+    "LICENSE",
+    "src",
+    "Cargo.toml",
+    "Cargo.lock",
+]
+default-run = "al"
+rust-version = "1.56.1"
 
 [dependencies]
 

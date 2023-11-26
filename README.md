@@ -1,5 +1,17 @@
 # Albert
 
+[![Code Size](https://img.shields.io/github/languages/code-size/meysam81/albert)](https://github.com/meysam81/albert)
+[![Repo Size](https://img.shields.io/github/repo-size/meysam81/albert)](https://github.com/meysam81/albert)
+[![Docs](https://img.shields.io/badge/docs-rs/albert?logo=docs.rs&label=docs.rs)](https://crates.io/crates/albert)
+[![Language Count](https://img.shields.io/github/languages/count/meysam81/albert)](https://github.com/meysam81/albert)
+[![Commit Intervals](https://img.shields.io/github/commit-activity/m/meysam81/albert)](https://github.com/meysam81/albert/commits)
+[![Last Release](https://img.shields.io/github/release-date/meysam81/albert?label=last%20release)](https://github.com/meysam81/albert/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/meysam81/albert?label=GitHub%20stars)](https://github.com/meysam81/albert/stargazers)
+[![GitHub Release Downloads](https://img.shields.io/github/downloads/meysam81/albert/total?label=GitHub%20Release%20Downloads)](https://github.com/meysam81/albert/releases)
+[![Cargo Crate](https://img.shields.io/crates/v/albert)](https://crates.io/crates/albert)
+[![Crate Download](https://img.shields.io/crates/d/albert?label=crate%20download)](https://crates.io/crates/albert)
+[![License](https://img.shields.io/github/license/meysam81/albert)](https://github.com/meysam81/albert)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 

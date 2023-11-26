@@ -1,6 +1,6 @@
 [package]
 name = "albert"
-version = "0.1.0"
+version = "0.1.5"
 edition = "2021"
 description = "A terminal calculator written in Rust with ❤️"
 license = "Apache-2.0"

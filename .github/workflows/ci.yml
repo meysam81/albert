@@ -13,7 +13,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "23 5 * * *"
+    - cron: "15 * */1 * *"
 
 env:
   CARGO_TERM_COLOR: always
@@ -95,7 +95,7 @@ jobs:
             target/${{ matrix.target }}/release/al-${{ matrix.target }}
             target/${{ matrix.target }}/release/al-${{ matrix.target }}.sha256
           if-no-files-found: error
-      - if: github.ref == 'refs/heads/v*'
+      - if: startsWith(github.ref, 'refs/tags/v')
         name: Upload assets
         uses: softprops/action-gh-release@v1
         with:
@@ -193,7 +193,7 @@ jobs:
           sarif_file: "trivy-results.sarif"
 
   github-release:
-    if: github.ref == 'refs/heads/v*'
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     permissions:
       contents: read

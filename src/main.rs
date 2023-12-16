@@ -5,6 +5,9 @@
 //     - take the next items in the stack until they are operand & higher priority than the current priority
 //     - push the operand, push everything remaining in the temp vector
 
+mod operators;
+mod traits;
+
 fn is_operand(elem: &str) -> bool {
     elem.parse::<i32>().is_ok()
 }

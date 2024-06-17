@@ -89,9 +89,9 @@ Currently the following mathematical operations are supported:
 ```bash
 $ al 1 + 2
 3
-$ al 1 - 2 '*' 4
+$ al 1 - 2 x 4
 -7
-$ al 1 - 2 '*' 4 / 2
+$ al 1 - 2 x 4 / 2
 -3
 ```
 

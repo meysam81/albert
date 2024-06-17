@@ -18,7 +18,7 @@ fn is_current_higher_prio(current: &str, coming: &str) -> bool {
 
 fn do_calculate(operand1: &i32, operator: &str, operand2: &i32) -> i32 {
     match operator {
-        "*" => operand1 * operand2,
+        "x" => operand1 * operand2,
         "/" => operand1 / operand2,
         "+" => operand1 + operand2,
         "-" => operand1 - operand2,
